@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: svc-area
+  datasource:
+    url: ${DB_SVC_AREA_URL}
+    username: ${DB_SVC_AREA_USERNAME}
+    password: ${DB_SVC_AREA_PASSWORD}
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
+
+swagger:
+  title: 行政区域API接口
+  description: 行政区域三级联动API接口
+  version: 1.0
+  terms-of-service-url: ${SWAGGER_TREMS_SERVICE_URL}
+  base-package: com.ncme.svc.area
+  contact:
+    name: colin
+    url: ${SWAGGER_TREMS_SERVICE_URL}
+    email: zhangliang1024_job@126.com
+
+# eureka
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: ${CLOUD_EUREKA_DEFAULT_ZONE}
